@@ -1,0 +1,551 @@
+@use 'sass:math';
+
+@function sizeCounter($elements) {
+    $size: 100 / $elements;
+    @return math.floor($size);
+}
+
+@mixin buttonStyle {
+    button {
+        display: inline-block;
+        text-align: center;
+        border: solid 1px white;
+        color: white;
+        border-radius: 3px;
+        background-color: rgba(0, 0, 0, 0);
+        transition: all ease-in-out 0.5s;
+    }
+
+    button:hover {
+        color: black;
+        background-color: white;
+        cursor: pointer;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+//overlay 
+.overLay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+
+body {
+    background-image: url('./Img/DarkSky.png');
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+
+    * {
+        font-family: 'Patrick Hand',
+            cursive;
+    }
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    button {
+        display: inline-block;
+        text-align: center;
+        border: solid 1px white;
+        color: white;
+        border-radius: 3px;
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.time {
+    // color:white;
+    text-align: center;
+    margin: 0% auto;
+}
+
+.spooky_img {
+    border: solid 5px white;
+    display: flex !important;
+    flex-direction: row;
+    @include buttonStyle();
+    overflow: hidden;
+
+
+    img {
+        position: relative;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    button {
+        background-color: black;
+    }
+}
+
+
+
+
+.sliceContainer {
+    position: relative;
+    border: solid 4px white;
+    margin: 0% auto;
+    margin-top: 3px;
+}
+
+canvas {
+    position: absolute;
+    // border: solid 1pxwhite;
+}
+
+.canvasNumber3 {
+    width: sizeCounter(3)*1%;
+    height: sizeCounter(3)*1%;
+    margin: 0.6%;
+}
+
+.canvasNumber4 {
+    width: calc(100% / 4);
+    height: calc(100% / 4);
+}
+
+.canvasNumber5 {
+    width: calc(100% / 5);
+    height: calc(100% / 5);
+}
+
+.canvasNumber6 {
+    margin: 2.5%;
+    width: sizeCounter(6)*1%;
+    height: sizeCounter(6)*1%;
+}
+
+//wyniki 
+table {
+    border: solid 1px white;
+    margin: 0 auto;
+
+    background-color: rgba(0, 0, 0, 0.931);
+
+    th {
+        color: white;
+    }
+
+    tr {
+        color: white;
+    }
+}
+
+
+
+.formContainer {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    align-self: center;
+    margin: 0 auto;
+    padding: 3%;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px white;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    p {
+        color: white;
+        font-size: 30pt;
+    }
+
+    input[type='text'] {
+        margin-top: 50%;
+        background-color: white;
+        margin: 0 auto;
+        width: 60%;
+        height: 40px;
+        border: solid 3px white;
+        border-radius: 3px;
+        line-height: 40px;
+        font-size: 20pt;
+    }
+
+    input[type='text']:focus {
+        border: solid 3px white;
+    }
+
+    @include buttonStyle();
+
+    button {
+        margin: 10px;
+        height: 50px;
+        font-size: medium;
+        padding: 3px;
+    }
+
+    button:after {
+        content: "";
+        margin: 3px;
+    }
+
+
+}
+
+.alertClass {
+    position: fixed;
+    display: inline-block;
+    background: url('./Img/DarkSky.png');
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    padding: 10px;
+    background-color: white;
+    border: solid 3px white;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 50px;
+    z-index: 4;
+
+    h1 {
+        color: white;
+        display: block;
+        margin: 0 auto;
+
+    }
+
+    @include buttonStyle();
+
+    button {
+        border: solid 3px white;
+        width: 100px;
+        height: 50px;
+        margin: 10px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 20pt;
+    }
+}
+
+.dispalyResultsButtons {
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    @include buttonStyle()
+}
+
+.empty {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+// dla małych komputerków 
+@media screen and (max-width: 900px) {
+    body {
+        overflow-x: hidden;
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .spooky_img {
+        display: block;
+        margin: 0 auto;
+        width: 50vw;
+        height: 50vw;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .buttonContainer {
+        // width: calc(100vw - 10px);
+        margin: 0;
+
+        button {
+            min-height: 30px;
+            font-size: 4vw;
+
+        }
+
+        @include buttonStyle();
+
+        button:hover {
+            border: solid 1px white;
+        }
+    }
+
+    .time {
+        width: calc(100vw - 5px);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 30px;
+
+    }
+
+    .sliceContainer {
+        // margin:0 auto;
+        order: 1;
+        width: calc(100vw - 8px);
+        height: calc(100vw - 8px);
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .dispalyResultsButtons {
+        flex-direction: column;
+        @include buttonStyle();
+        // text-align: center;
+        justify-content: space-around;
+        align-items: center;
+
+        button {
+            width: 90vw;
+            height: 20vh;
+            font-size: 5vw;
+        }
+    }
+
+    table {
+        width: 98vw;
+
+        tr {
+            font-size: 5vw;
+
+        }
+    }
+
+    .resultsContainer {
+        @include buttonStyle();
+        height: 10vh;
+        display: flex;
+        justify-content: space-around;
+
+        button {
+            width: 25%;
+            font-size: 5vw;
+
+        }
+    }
+}
+
+//dla dużych komputerków 
+@media screen and (min-height: 650px) and (min-width: 900px) {
+    .spooky_img {
+        margin: 10px;
+        display: block;
+        width: calc(60vw - 25vh);
+        height: calc(60vw - 25vh);
+        max-height: 75vh;
+        max-width: 75vh;
+
+    }
+
+    .sliceContainer {
+        position: fixed !important;
+        top: 10px;
+        right: 10px;
+        width: calc(70vw - 25vh);
+        height: calc(70vw - 25vh);
+        max-height: 75vh;
+        max-width: 75vh;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
+    .buttonContainer {
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+        height: 10vh;
+        @include buttonStyle();
+
+        button {
+            font-size: 2vh;
+            width: 100%;
+            margin: 10px;
+            min-height: 30px;
+        }
+
+    }
+
+    .time {
+        position: absolute;
+        bottom: 15vh;
+        width: 50vw;
+        left: calc(50vw - 25vw);
+
+        img {
+            // width: calc(100% / 20);
+            margin: 0;
+        }
+    }
+
+
+
+    .dispalyResultsButtons {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            margin: 10px;
+            width: 25vw;
+            height: 25vw;
+
+            font-size: 5vw;
+        }
+    }
+
+    .resultsContainer {
+        display: inline-block;
+        flex-direction: row;
+        margin: 20px;
+        width: calc(100vw - 40px);
+        height: 10vw;
+        text-align: center;
+        @include buttonStyle();
+
+        button {
+            height: 10vw;
+            width: 10vw;
+            margin: 10px;
+            font-size: 10pt;
+
+        }
+    }
+
+    table {
+        margin-top: 10%;
+        width: 80vw;
+    }
+}
+
+//dla dużych wąskich ekraników 
+@media screen and (max-height: 650px) and (min-width: 890px) {
+    body {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .spooky_img {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .sliceContainer {
+        width: 30vw;
+        height: 30vw;
+
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .buttonContainer {
+        position: absolute;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        margin: 20px; // bottom: 0;
+        @include buttonStyle();
+
+        button {
+            font-size: 2vh;
+            width: 100%;
+            margin: 10px;
+            min-height: 30px;
+        }
+
+    }
+
+    .time {
+        position: absolute;
+        bottom: 10px;
+        width: 50vw;
+        left: calc(50vw - 25vw);
+
+        img {
+            // width: calc(100% / 20);
+            margin: 0;
+        }
+    }
+
+
+
+    .dispalyResultsButtons {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            margin: 10px;
+            width: calc(20vw - 40px);
+            height: 20vw;
+            font-size: 5vw;
+        }
+    }
+
+    .resultsContainer {
+        display: inline-block;
+        flex-direction: column;
+        margin-top: 10%;
+        text-align: center;
+        @include buttonStyle();
+
+        button {
+            height: 10vw;
+            width: 10vw;
+            margin: 10px;
+            font-size: 20pt;
+
+
+        }
+    }
+
+    table {
+        margin-top: 10%;
+        width: 80vw;
+    }
+
+}

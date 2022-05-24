@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+body {
+  display: flex;
+  margin: 0%;
+  padding: 0;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body * {
+  font-family: "Open Sans", sans-serif;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+header {
+  height: 5rem;
+  background-color: white;
+  align-items: center;
+}
+header h2 {
+  text-align: center;
+}
+
+footer {
+  background-color: black;
+  height: 3rem;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer span {
+  text-align: center;
+  color: white;
+  display: block;
+}
+
+.project_card {
+  --visited_link_color: rgb(42, 192, 241);
+  border: solid 1px black;
+  margin: 1rem;
+  width: 18rem;
+  height: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.project_card-head {
+  position: relative;
+  height: 35%;
+}
+.project_card-head-image {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.project_card-head-title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-weight: bolder;
+  color: white;
+  top: 20%;
+  font-size: x-large;
+  display: inline-block;
+  margin: 0 auto;
+}
+.project_card-description {
+  margin: 0.5rem;
+}
+.project_card-section {
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+.project_card-bottom {
+  height: 5%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.project_card-bottom-image {
+  height: 1rem;
+  transition: all ease-in-out 0.2s;
+}
+.project_card-bottom-image:hover {
+  cursor: pointer;
+  height: 1.1rem;
+}
+.project_card-bottom-link {
+  text-decoration: none;
+}
+.project_card-bottom-link:hover {
+  color: var(--visited_link_color);
+  cursor: pointer;
+}
+
+.technology {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.technology-image {
+  border-radius: 50%;
+  width: 2.8rem;
+  height: 2.8rem;
+  margin: 0.5rem;
+  z-index: -11;
+}
+
+@media only screen and (max-width: 643px) {
+  main {
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 644px) {
+  main {
+    justify-content: center;
+  }
+}

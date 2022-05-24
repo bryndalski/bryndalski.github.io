@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  cursor: url("../assets/img/kursor.png"), pointer;
+}
+
+* {
+  user-select: none;
+}
+#anwsersTabe {
+  position: absolute;
+  top: 93px;
+  left: 20px;
+  width: 80px;
+  height: 470px;
+  border-collapse: separate;
+  border-spacing: 0 20px;
+  tr {
+    margin: 0;
+    th {
+      // margin-left: 10px;
+      background-repeat: no-repeat !important;
+      background-size: contain !important;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+#questions {
+  position: absolute;
+  top: 30px;
+  width: 200px;
+  height: 50px;
+  left: 170px;
+}
+.buttonContainer {
+  position: absolute;
+  left: 600px;
+  top: 450px;
+  button {
+    cursor: url("../assets/img/kursor.png"), pointer;
+    width: 260px;
+    padding: 0;
+    background-color: transparent;
+    height: 110px;
+    margin: 10px;
+  }
+}
+#gameTable {
+  position: absolute;
+  top: 93px;
+  left: 170px;
+  border-collapse: separate;
+  border-spacing: initial;
+  height: 470px;
+  tr {
+    border: solid 1px red;
+    margin: 0;
+    th {
+      margin-left: 10px;
+      width: 41px;
+      height: 41px;
+      background-repeat: no-repeat !important;
+      background-size: contain !important;
+    }
+  }
+}
+
+#try {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 350px;
+  left: 685px;
+  height: 50px;
+  width: 100px;
+  cursor: url("../assets/img/kursor.png"), pointer;
+  background: transparent;
+  img {
+    width: 100px;
+    height: 50px;
+  }
+}
+
+.game {
+  position: relative;
+  background-image: url("../assets/img/back.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1000px;
+  min-width: 1000px;
+  height: 800px;
+  min-height: 800px;
+}
+
+#dots {
+  position: absolute;
+  left: 623px;
+  width: 232px;
+  top: 97px;
+  height: 90px;
+  tr {
+    margin: 0;
+    th,
+    img {
+      width: 41px;
+      height: 41px;
+    }
+  }
+}
+#nextGuess {
+  width: 240px;
+  height: 50px;
+  position: absolute;
+  top: 270px;
+  left: 620px;
+  tr {
+    margin: 0;
+    th {
+      width: 41px;
+      height: 41px;
+      background-repeat: no-repeat;
+      background-size: contain !important;
+    }
+  }
+}
