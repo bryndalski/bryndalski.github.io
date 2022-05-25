@@ -64,6 +64,7 @@ footer span {
   z-index: -1;
 }
 .project_card-head-title {
+  text-transform: uppercase;
   position: absolute;
   width: 100%;
   text-align: center;
@@ -86,9 +87,9 @@ footer span {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  padding: 0.5rem;
 }
 .project_card-bottom-image {
+  margin-left: 0.2rem;
   height: 1rem;
   transition: all ease-in-out 0.2s;
 }
@@ -97,6 +98,7 @@ footer span {
   height: 1.1rem;
 }
 .project_card-bottom-link {
+  margin-right: 0.2rem;
   text-decoration: none;
 }
 .project_card-bottom-link:hover {
