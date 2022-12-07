@@ -1,1 +1,1 @@
-# bryndalski.github.io
+# Page with links for projects
